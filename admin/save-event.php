@@ -32,13 +32,15 @@ if (isset($_FILES['fileToUpload'])) {
 session_start();
 $title = mysqli_real_escape_string($conn, $_POST['event_title']);
 $description = mysqli_real_escape_string($conn, $_POST['eventdesc']);
+$location = mysqli_real_escape_string($conn, $_POST['location']);
+$time_from = mysqli_real_escape_string($conn, $_POST['time_from']);
+$time_to = mysqli_real_escape_string($conn, $_POST['time_to']);
 
-$date = date("d M, Y");
+$date = date("Y-m-d");
 $author = $_SESSION['user_id'];
 
-$sql = "INSERT INTO event(title, description,event_date,author,event_img)
-          VALUES('{$title}','{$description}','{$date}',{$author},'{$new_name}');";
-
+$sql = "INSERT INTO event(title, description,event_date,author,location,time_from,time_to,event_img)
+          VALUES('{$title}','{$description}','{$date}',{$author},'{$location}','{$time_from}','{$time_to}','{$new_name}');";
 
 if (mysqli_multi_query($conn, $sql)) {
     header("location: {$hostname}/admin/event.php");

@@ -21,6 +21,21 @@
                         <label for="exampleInputPassword1">Event image</label>
                         <input type="file" name="fileToUpload" required>
                     </div>
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" name="location" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Event Date</label>
+                        <input type="date" name="event_date" class="form-control">
+                    </div>
+                    <div class="form-group time">
+                        <label>Time</label>
+                        <input type="time" name="time_from" class="form-control">
+                        <span>TO</span>
+                        <input type="time" name="time_to" class="form-control">
+                    </div>
                     <input type="submit" name="submit" class="btn btn-primary" value="Save" required />
                 </form>
                 <!--/Form -->
