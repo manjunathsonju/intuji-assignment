@@ -8,6 +8,18 @@
             <div class="col-md-2">
                 <a class="add-new" href="add-event.php">add event</a>
             </div>
+            <?php $status = $statusMsg = '';
+            if (!empty($_SESSION['status_response'])) {
+                $status_response = $_SESSION['status_response'];
+                $status = $status_response['status'];
+                $statusMsg = $status_response['status_msg'];
+            }
+            ?>
+
+            <!-- Status message -->
+            <?php if (!empty($statusMsg)) { ?>
+                <div class="alert alert-<?php echo $status; ?>"><?php echo $statusMsg; ?></div>
+            <?php } ?>
             <div class="col-md-12">
                 <?php
                 include "config.php"; // database configuration
