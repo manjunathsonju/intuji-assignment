@@ -55,9 +55,10 @@ if (isset($_GET['code'])) {
                     //echo json_encode([ 'event_id' => $event_id ]); 
 
                     if ($google_event_id) {
+
                         // Update google event reference in the database 
-                        $sqlQ = "UPDATE event SET google_calendar_event_id=" . $google_event_id . " WHERE event_id=" . $event_id;
-                        mysqli_query($conn, $sql);
+                        $sqlQ = "UPDATE event SET google_calendar_event_id='" . $google_event_id . "' WHERE event_id=" . $event_id;
+                        mysqli_query($conn, $sqlQ);
 
                         unset($_SESSION['last_event_id']);
                         unset($_SESSION['google_access_token']);
