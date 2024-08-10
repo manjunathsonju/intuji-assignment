@@ -10,16 +10,17 @@ CREATE TABLE `event` (
   `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `event_date` varchar(50) NOT NULL,
+  `event_date` date NOT NULL,
   `author` int(11) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `time_from` time NOT NULL,
+  `time_to` time NOT NULL,
+  `google_calendar_event_id` varchar(255) DEFAULT NULL,
   `event_img` varchar(100) NOT NULL,
   PRIMARY KEY (`event_id`),
   UNIQUE KEY `post_id` (`event_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-INSERT INTO `event` (`event_id`, `title`, `description`, `event_date`, `author`, `event_img`) VALUES
-(43,	'affsd',	'sadfsadf',	'09 Aug, 2024',	27,	'1723187601-dhulikhel.jpg'),
-(44,	'wed',	'cvasd',	'09 Aug, 2024',	27,	'1723187615-pngtree-simple-v-logo-design-png-image_3632479.jpg');
 
 SET NAMES utf8mb4;
 
@@ -33,7 +34,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `settings` (`id`, `websitename`, `logo`, `footerdesc`) VALUES
-(1,	'Events Notification',	'pngtree-simple-v-logo-design-png-image_3632479.jpg',	'© Copyright 2020 Manju Nath | Powered On <a href=\"https://www.php.net\">PHP</a>');
+(1,	'Events Notification7',	'pngtree-simple-v-logo-design-png-image_3632479.jpg',	'© Copyright 2020 Manju Nath | Powered On <a href=\"https://www.php.net\">PHP</a>');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -47,6 +48,6 @@ CREATE TABLE `user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `username`, `password`, `role`) VALUES
-(27,	'Manju Nath',	'Sonju',	'manjunath',	'21232f297a57a5a743894a0e4a801fc3',	1);
+(27,	'Manju Nath',	'Sonju1',	'manjunath',	'21232f297a57a5a743894a0e4a801fc3',	1);
 
--- 2024-08-09 07:18:19
+-- 2024-08-10 10:24:06
