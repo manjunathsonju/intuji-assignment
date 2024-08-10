@@ -2,11 +2,14 @@
 <div id="admin-content">
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <h1 class="admin-heading">All Events</h1>
             </div>
             <div class="col-md-2">
                 <a class="add-new" href="add-event.php">add event</a>
+            </div>
+            <div class="col-md-2">
+                <a class="add-new" href="google_calendar_event_sync.php?logout=true">disconnect event</a>
             </div>
             <?php $status = $statusMsg = '';
             if (!empty($_SESSION['status_response'])) {

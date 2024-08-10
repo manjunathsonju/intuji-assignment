@@ -87,3 +87,10 @@ if (isset($_GET['code'])) {
     header("location: {$hostname}/admin/event.php");
     exit();
 }
+
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("location: {$hostname}/admin/event.php");
+    exit();
+}
